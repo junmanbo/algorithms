@@ -2,18 +2,18 @@ import math
 from collections import deque
 
 
-def solution(progresses, speeds):
+def solution(progresses_val, speeds_val):
     answer = deque()
-    max = 0
+    max_val = 0
     cnt = 0
-    for idx, progress in enumerate(progresses):
-        period = math.ceil((100 - progress) / speeds[idx])
+    for idx, progress in enumerate(progresses_val):
+        period = math.ceil((100 - progress) / speeds_val[idx])
         if idx == 0:
-            max = period
+            max_val = period
             cnt = 1
-        elif period > max:
+        elif period > max_val:
             answer.append(cnt)
-            max = period
+            max_val = period
             cnt = 1
         else:
             cnt += 1
