@@ -24,7 +24,6 @@ def bfs(graph, n, m):
             if graph[nx][ny] == 0:
                 continue
 
-
             if graph[nx][ny] == 1:
                 queue.append((nx, ny))
                 graph[nx][ny] = graph[x][y] + 1
@@ -37,8 +36,5 @@ graph = []
 for _ in range(n):
     tmp = list(map(int, input().rstrip().split()))
     graph.append(tmp)
-
-# graph = [[1, 0, 1, 1, 1, 1], [1, 0, 1, 0, 1, 0], [1, 0, 1, 0, 1, 1], [1, 1, 1, 0, 1, 1]]
-# graph = [[1, 1, 0, 1, 1, 0], [1, 1, 0, 1, 1, 0], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 0, 1]]
 
 print(bfs(graph, n, m))
